@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/contacts.css">
+  <link rel="icon" href="images/logo2.jpg">
+  <title>Контакты агентства недвижимости "Домино"</title>
+</head>
+
+<body>
+  <header>
+    <a href="index.html">
+      <img src="images/logo.jpg" alt="Логотип" />
+    </a>
+
+    <div class="information">
+      <p><strong>Адрес:</strong> г. Алматы, пр-т. Назарбаева 103, этаж 9</p>
+      <p><strong>Время работы:</strong> Пн-Пт: 08:00-18:00; Сб-Вскр: выходной</p>
+    </div>
+
+    <!-- Бургер меню -->
+    <input type="checkbox" id="burger-toggle" hidden>
+    <label for="burger-toggle" class="burger">☰</label>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Главная</a></li>
+
+        <li class="has-submenu">
+          <a href="objects.html">Объекты</a>
+          <ul class="submenu">
+            <hr />
+            <li><a href="apartments.html">Квартиры</a></li>
+            <li><a href="houses.html">Дома</a></li>
+          </ul>
+        </li>
+
+        <li><a href="about.html">О компании</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contacts">
+      <div class="breadcrumb">
+        <li>
+          <a href="index.html">
+            <span>Главная</span>
+          </a>
+        </li>
+
+        <span class="sep">></span>
+
+        <li>
+          <a href="contacts.html">
+            <span>Контакты</span>
+          </a>
+        </li>
+      </div>
+
+      <div class="inline">
+        <p class="question">Есть вопросы?</p>
+        <p>Заполните форму ниже - и мы перезвоним Вам в течение 10 минут</p>
+
+        <form action="#" method="post">
+
+          <div class="form-grid">
+            <input type="text" name="myname" placeholder="*Ваше имя" required>
+            <input type="tel" name="tel" placeholder="*Ваш телефон" required>
+
+            <textarea class="txt" name="mail" placeholder="Ваш вопрос"></textarea>
+          </div>
+
+          <button type="submit">Отправить</button>
+
+          <p class="or">Или свяжитесь с нами по телефону</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+
+      <div class="footer-logo">
+        <img src="images/logo.jpg" alt="Логотип">
+        <p>Агентство недвижимости в Алматы</p>
+      </div>
+
+      <div class="footer-info">
+        <p><strong>Адресс:</strong> пр-т. Назарбаева 103, этаж 9</p>
+        <p><strong>Телефон:</strong> +7 (777) 000 0000</p>
+        <p><strong>Email:</strong> info@domino.kz</p>
+        <p><strong>Пн-Пт:</strong> 08:00-18:00</p>
+      </div>
+
+      <div class="social-medias">
+        <a target="_blank" href="https://www.instagram.com/">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo_vt9qrJw-0QDSsoO3k_SkOkT70B5Y8YUSQ&s">
+        </a>
+
+        <a target="_blank" href="https://web.telegram.org/a/">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Telegram_2019_Logo.svg/2048px-Telegram_2019_Logo.svg.png"
+            alt="Telegram">
+        </a>
+
+        <a target="_blank" href="https://web.whatsapp.com/">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/2062095_application_chat_communication_logo_whatsapp_icon.svg/640px-2062095_application_chat_communication_logo_whatsapp_icon.svg.png"
+            alt="Whatsapp">
+        </a>
+      </div>
+
+      <div class="footer-rights">
+        <p>© 2025 "Домино". Все права защищены.</p>
+      </div>
+
+    </div>
+  </footer>
+</body>
+
+</html>

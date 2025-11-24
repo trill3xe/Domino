@@ -1,0 +1,54 @@
+.breadcrumb {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    margin-top: 20px;
+    gap: 15px;
+    align-items: center;
+    list-style: none;
+    left: 0;
+    margin-left: 15px;
+}
+
+.breadcrumb li a{
+    text-decoration: none;
+    color: white;
+    font-size: 20px; 
+}
+
+.breadcrumb li a:hover {
+    color: rgb(32, 143, 207);
+}
+
+.sep {
+    color: white;
+}
+
+.about h2 {
+    margin-top: 50px;
+}
+
+.about .text {
+    padding: 20px;
+}
+
+.directions {
+    margin-bottom: 100px;
+}
+
+.office {
+    border: none;
+}
+
+.opportunity-title h2 {
+    margin-top: 100px;
+}
+
+.footer {
+    border-top: 1px solid white;
+    margin: 0;
+}
+
+.footer-logo img {
+    margin-top: 20px;
+}

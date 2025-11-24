@@ -1,0 +1,1013 @@
+/* Общие настройки */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Courier New", Courier, monospace;
+  transition: color 0.3s;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: black;
+}
+
+#top {
+  display: block;
+  position: relative;
+  top: -115px;
+  visibility: hidden;
+}
+
+/* Header */
+header {
+  display: flex;
+  position: sticky;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 18px;
+  width: 100%;
+  height: 120px;
+  background-color: rgb(0, 0, 0);
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid white;
+}
+
+header img {
+  width: 200px;
+  height: 115px;
+}
+
+.information {
+  color: white;
+  line-height: 1.4;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+}
+
+nav ul li {
+  background-color: #ffffff;
+  padding: 10px;
+  cursor: pointer;
+  transition: filter 0.3s;
+  position: relative;
+  display: inline-block;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+}
+
+nav ul li a:hover {
+  color: rgb(32, 143, 207);
+}
+
+.submenu li a:hover {
+  color: rgb(32, 143, 207);
+}
+
+.has-submenu a {
+  width: 100px;
+  text-align: center;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  list-style: none;
+  text-align: center;
+  top: 100%;
+  left: 0;
+  box-sizing: border-box;
+  line-height: 0.8;
+}
+
+.submenu a {
+  border-bottom: 1px solid black;
+}
+
+.submenu li {
+  border-bottom: 1px solid black;
+}
+
+.submenu li:last-child {
+  border-bottom: none;
+}
+
+.has-submenu>a:hover+.submenu,
+.has-submenu:hover .submenu {
+  display: block;
+}
+
+/* Welcome */
+.welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  height: 1100px;
+  overflow: hidden;
+  width: 100%;
+  border-bottom: 1px solid white;
+}
+
+.welcome::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url(images/background.jpg?w=2000);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: blur(2.5px);
+  z-index: -1;
+}
+
+.welcome::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+.welcome-text {
+  margin-bottom: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.welcome-text h1 {
+  color: white;
+  font-size: 55px;
+  font-weight: 500;
+  line-height: 1.3;
+  margin-top: 20px;
+}
+
+.welcome-text h1 .domino {
+  color: white;
+  background-color: black;
+}
+
+.welcome-text span {
+  color: white;
+  background-color: black;
+}
+
+.banners {
+  display: flex;
+  justify-content: space-between;
+  width: fit-content;
+  gap: 1118px;
+  margin-top: -80px;
+}
+
+.banners img {
+  height: 740px;
+  width: 385px;
+  object-fit: cover;
+  border-radius: 4px;
+  filter: brightness(80%);
+}
+
+.modal-wrapper .open-btn {
+  padding: 30px;
+  width: 350px;
+  background-color: rgb(0, 0, 0);
+  font-size: 35px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+  pointer-events: auto;
+  color: white;
+  display: inline-block;
+  text-align: center;
+  border: 1px solid white;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  visibility: hidden;
+}
+
+.modal::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(3px);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: black;
+  padding: 20px;
+  position: relative;
+  color: white;
+  text-align: center;
+  width: 50%;
+  height: 500px;
+  border: 1px solid rgba(255, 255, 255, 0.623);
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  font-size: 35px;
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
+.close-button:hover {
+  color: rgb(32, 143, 207);
+}
+
+.modal-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+
+.modal-text h2 {
+  font-size: 50px;
+  font-weight: 500;
+  background-color: white;
+  color: black;
+  width: fit-content;
+}
+
+.modal-text p {
+  padding-top: 30px;
+  font-size: 30px;
+  width: 900px;
+}
+
+#modal-toggle:checked~.modal {
+  visibility: visible;
+}
+
+/* Real Estate */
+.real-estate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.real-estate h2 {
+  font-size: 55px;
+  margin: 20px 0;
+  margin-top: 100px;
+  font-weight: 500;
+  border-bottom: 1px solid white;
+}
+
+.offers {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 35px;
+  grid-row-gap: 70px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+/* Cards */
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 420px;
+  border: 1px solid white;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  filter: brightness(85%);
+}
+
+.card img {
+  width: 100%;
+  height: 290px;
+}
+
+.card .property-type {
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  display: block;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.description p {
+  font-weight: 500;
+  font-size: 21px;
+  margin-top: 20px;
+  line-height: 1.5;
+  width: 405px;
+  height: 315px;
+}
+
+.description a {
+  color: black;
+  font-size: 21px;
+}
+
+.description a:hover {
+  color: rgb(32, 143, 207);
+}
+
+.description .more {
+  display: inline-block;
+  margin-bottom: 30px;
+  border: 1px solid black;
+  text-decoration: none;
+  padding: 10px;
+}
+
+.background-image {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.background-image img {
+  height: 400px;
+  width: 100%;
+  filter: blur(3px);
+}
+
+.background-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* About */
+.about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about h2 {
+  text-align: center;
+  font-size: 55px;
+  font-weight: 500;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  color: white;
+  border-bottom: 1px solid white;
+  width: fit-content;
+  display: inline-block;
+}
+
+/* About text */
+.about-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-size: 30px;
+  width: 100%;
+}
+
+.about-title span {
+  background-color: white;
+  color: black;
+}
+
+.about-title .text {
+  margin-bottom: 80px;
+  width: 1400px;
+}
+
+.directions {
+  display: flex;
+  flex-direction: column;
+}
+
+.directions p {
+  margin-bottom: 30px;
+}
+
+.directions ul {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.about-title a {
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  border: 1px solid white;
+  padding: 10px;
+  margin-top: 50px;
+  margin-bottom: 80px;
+}
+
+.about-title a:hover {
+  color: rgb(32, 143, 207);
+}
+
+.office {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.office img {
+  height: 700px;
+  width: 1300px;
+  margin-bottom: 80px;
+  border-radius: 5px;
+  filter: brightness(70%);
+}
+
+.office p {
+  margin-bottom: 40px;
+}
+
+.office iframe {
+  margin-bottom: 120px;
+  filter: brightness(70%);
+}
+
+/* Opportunity */
+.opportunity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+.opportunity-title p {
+  color: white;
+  font-size: 30px;
+  width: 1720px;
+  margin-bottom: 80px;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.gallery div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 30px;
+  width: 520px;
+  height: 320px;
+  border: 1px solid white;
+}
+
+.gallery img {
+  border-radius: 50%;
+  margin-bottom: 30px;
+}
+
+.gallery p {
+  color: white;
+  font-size: 24px;
+  width: 80%;
+}
+
+/* Contacts */
+.contacts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 815px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Размытый фон */
+.contacts::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url(https://img.freepik.com/premium-photo/low-angle-view-buildings-against-clear-sky_1048944-15963603.jpg?w=2000);
+  background-size: cover;
+  background-position: center;
+  filter: blur(2.5px);
+  z-index: -1;
+}
+
+.contacts::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+.inline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Карточки формы */
+.contacts .inline {
+  background-color: black;
+  padding: 30px 40px;
+  min-width: 850px;
+  line-height: 1.8;
+  color: white;
+}
+
+/* Заголовки */
+.inline .question {
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.inline p {
+  font-size: 22px;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+/* Два поля */
+.inline .form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 20px;
+  width: 520px;
+}
+
+/* Инпуты */
+.form-grid input,
+.inline textarea {
+  padding: 10px;
+  font-size: 17px;
+  margin-bottom: 10px;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+/* Текствое поле */
+.form-grid textarea {
+  margin-bottom: 20px;
+  height: 90px;
+  padding: 10px;
+  grid-column: 1/ -1;
+  resize: none;
+}
+
+/* Кнопка */
+.inline button {
+  width: 200px;
+  padding: 10px;
+  font-size: 17px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.inline button:hover {
+  color: rgb(32, 143, 207);
+}
+
+.inline .or {
+  margin: 0;
+  font-size: 20px;
+}
+
+/* Footer */
+.footer {
+  color: #fff;
+  padding: 40px 20px;
+  margin-top: 10px;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.footer-logo img {
+  width: 220px;
+}
+
+.footer-logo p {
+  margin: 5px 0 0;
+  font-size: 16px;
+  opacity: 0.8;
+}
+
+.footer-info p {
+  margin: 4px 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.footer-rights p {
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0.6;
+}
+
+.footer .social-medias {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.social-medias a {
+  text-decoration: none;
+}
+
+.social-medias img {
+  width: 50px;
+  border-radius: 50%;
+}
+
+/* Кнопка вверх */
+.scroll-top {
+  position: fixed;
+  bottom: 30px;
+  right: 40px;
+  ;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 25px;
+  width: 100px;
+  padding: 15px;
+  transition: 0.3s;
+  border-radius: 10px;
+  opacity: 0.8;
+  line-height: 0.9;
+}
+
+.scroll-top:hover {
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* Бургер-иконка (по умолчанию скрыта) */
+.burger {
+  display: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+/* 2. Планшеты и маленькие ноутбуки (до 1024px) */
+@media (max-width: 1024px) {
+
+  /* Шапка */
+  .information {
+    display: none;
+  }
+
+  .welcome {
+    padding-bottom: 200px;
+  }
+
+  .welcome h1 {
+    width: 900px;
+    margin-bottom: 50px;
+  }
+
+  .open-btn {
+    box-sizing: border-box;
+    margin-top: 60px;
+    padding: 20px !important;
+  }
+
+  .modal-content {
+    width: 700px;
+  }
+
+  .modal-text {
+    gap: 0;
+  }
+
+  .directions {
+    box-sizing: border-box;
+    padding: 60px;
+  }
+
+  /* Сетка товаров (превращаем 4 колонки в 2) */
+  .offers {
+    grid-template-columns: 1fr 1fr;
+    padding: 0 20px;
+  }
+
+  .background-image img {
+    height: 350px;
+  }
+
+  .description {
+    gap: 10px;
+  }
+
+  .description p {
+    line-height: 1.4;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .description p {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  /* Баннеры */
+  .banners {
+    gap: 50px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .banners img {
+    width: 45%;
+    height: auto;
+  }
+
+  /* Текст "Почему выбирают нас" и "О нас" */
+  .opportunity-title p,
+  .about-title .text,
+  .modal-text p {
+    width: 90%;
+  }
+
+  .opportunity-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Галерея внизу */
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+    /* 2 колонки вместо 3 */
+    padding: 0 20px;
+  }
+
+  .gallery div {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .office img {
+    width: 750px;
+    height: 500px;
+  }
+
+  .office iframe {
+    width: 700px;
+    height: 450px;
+  }
+
+  /* Форма */
+  .contacts .inline {
+    min-width: auto;
+    width: 90%;
+  }
+
+  .inline .form-grid {
+    width: 100%;
+  }
+}
+
+/* 3. Мобильные телефоны (до 768px) */
+@media (max-width: 768px) {
+
+  /* Шапка и меню */
+  header {
+    justify-content: space-between;
+    height: 80px;
+  }
+
+  header img {
+    height: 80px;
+    width: auto;
+  }
+
+  .scroll-top {
+    padding: 7px;
+    right: 10px;
+  }
+
+  .burger {
+    display: block;
+    margin-right: 20px;
+  }
+
+  /* Скрываем меню и делаем выпадающим */
+  nav {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    border-top: 1px solid white;
+    display: none;
+    /* Скрыто по умолчанию */
+  }
+
+  .real-estate {
+    margin-top: 0;
+  }
+
+  #burger-toggle:checked~nav {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  nav ul li {
+    text-align: center;
+    border-bottom: 1px solid #333;
+  }
+
+  /* Главный экран */
+  .welcome {
+    height: auto;
+    min-height: 100vh;
+    padding-bottom: 0;
+  }
+
+  .welcome-text h1 {
+    font-size: 30px;
+    width: 400px;
+  }
+
+  .banners {
+    flex-direction: column;
+    /* Баннеры друг под друга */
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .banners img {
+    width: 90%;
+    height: 650px;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+  }
+
+  .modal-wrapper .open-btn {
+    box-sizing: border-box;
+    padding: 20px !important;
+    width: 140px;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
+
+  /* Модальное окно */
+  .modal-content {
+    width: 90%;
+    height: auto;
+  }
+
+  .modal-text {
+    gap: 10px;
+  }
+
+  .modal-text h2 {
+    font-size: 28px;
+  }
+
+  .modal-text p {
+    font-size: 16px;
+  }
+
+  /* Сетка товаров - в 1 колонку */
+  .offers {
+    grid-template-columns: 1fr;
+    margin-top: 50px;
+  }
+
+  .background-image img {
+    height: 250px;
+  }
+
+  .about-title p {
+    text-align: center;
+  }
+
+  /* Заголовки */
+  .real-estate h2,
+  .about h2,
+  .opportunity h2 {
+    font-size: 32px;
+  }
+
+  .real-estate h2 {
+    margin-top: 100px !important;
+  }
+
+  .about h2 {
+    margin-top: 100px !important;
+  }
+
+  /* Офис */
+  .office img {
+    height: auto;
+    width: 400px;
+  }
+
+  .office iframe {
+    width: 400px;
+    height: 300px;
+  }
+
+  /* Галерея и иконки */
+  .gallery {
+    grid-template-columns: 1fr;
+    /* 1 колонка */
+  }
+
+  .gallery div {
+    padding: 10px;
+  }
+
+  /* Контакты */
+  .contacts {
+    height: 1000px;
+  }
+
+  .contacts .inline {
+    padding: 15px;
+    line-height: 1.2;
+  }
+
+  .inline .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .inline .question {
+    font-size: 24px;
+  }
+
+  /* Подвал */
+  .footer-logo img {
+    width: 150px;
+  }
+}
