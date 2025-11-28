@@ -10,10 +10,10 @@
     margin-left: 15px;
 }
 
-.breadcrumb li a{
+.breadcrumb li a {
     text-decoration: none;
     color: white;
-    font-size: 20px; 
+    font-size: 20px;
 }
 
 .breadcrumb li a:hover {
