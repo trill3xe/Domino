@@ -169,11 +169,17 @@ nav ul li a:hover {
 }
 
 .banners {
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   width: fit-content;
   gap: 1118px;
   margin-top: -80px;
+}
+
+.banners a {
+  text-decoration: none;
+  text-align: center;
 }
 
 .banners img {
@@ -482,7 +488,7 @@ nav ul li a:hover {
 .gallery {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 30px;
 }
 
 .gallery div {
@@ -780,8 +786,8 @@ nav ul li a:hover {
   }
 
   .banners img {
-    width: 45%;
-    height: auto;
+    width: 460px;
+    height: 825px;
   }
 
   /* Текст "Почему выбирают нас" и "О нас" */
@@ -906,7 +912,7 @@ nav ul li a:hover {
   .banners img {
     width: 90%;
     height: 650px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     border: 1px solid black;
     border-radius: 10px;
   }
@@ -986,6 +992,19 @@ nav ul li a:hover {
 
   .gallery div {
     padding: 10px;
+    box-sizing: border-box;
+    gap: 15px;
+    height: 350px;
+  }
+
+  .gallery img {
+    margin-bottom: 0;
+  }
+
+  .gallery p {
+    display: flex;
+    height: 162px;
+    align-items: center;
   }
 
   /* Контакты */
